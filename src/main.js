@@ -45,9 +45,36 @@ Object.keys(filters).forEach(key => {
 
 Vue.config.productionTip = false
 
+import Vuetify, {
+  VNavigationDrawer,
+  VFooter,
+  VToolbar,
+  VTooltip,
+  VBtn,
+  VIcon,
+  VFadeTransition
+} from 'vuetify'
+
+Vue.use(Vuetify, {
+  components: {
+    VNavigationDrawer,
+    VFooter,
+    VToolbar,
+    VTooltip,
+    VBtn,
+    VIcon,
+    VFadeTransition
+  }
+})
+
+const opts = {}
+
+export default new Vuetify(opts)
+
 new Vue({
   el: '#app',
   router,
   store,
+  vuetify: new Vuetify(),
   render: h => h(App)
 })
